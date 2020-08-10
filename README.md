@@ -1,0 +1,3 @@
+# @mousepox/util
+
+Miscellaneous utilities.
