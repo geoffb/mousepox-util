@@ -1,4 +1,5 @@
 /** Create a deep copy of an object */
+// eslint-disable-next-line @typescript-eslint/no-explicit-any, @typescript-eslint/explicit-module-boundary-types, @typescript-eslint/ban-types
 export function copy(src: any): object {
   if (typeof src === "object" && src != null) {
     if (Array.isArray(src)) {
@@ -8,11 +9,10 @@ export function copy(src: any): object {
       }
       return a;
     } else {
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       const obj: any = {};
       for (const key in src) {
-        if (src.hasOwnProperty(key)) {
-          obj[key] = copy(src[key]);
-        }
+        obj[key] = copy(src[key]);
       }
       return obj;
     }
