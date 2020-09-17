@@ -19,8 +19,9 @@
     "build": "yarn build-es && yarn build-cjs",
     "build-es": "tsc",
     "build-cjs": "tsc -p tsconfig.cjs.json",
+    "clean": "rm -rf dist",
     "lint": "eslint lib --ext .ts",
-    "prepublish": "yarn lint && yarn build"
+    "prepublish": "yarn lint && yarn clean && yarn build"
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^4.1.1",
